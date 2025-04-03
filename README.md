@@ -1,2 +1,5 @@
 # repositorio
-repositorio para a aula de desenvolvimento de produtos multimedia
+repositorio para o projeto da disciplina de desenvolvimento de produtos multimedia
+
+## Autores
+Acquiles Torresc
