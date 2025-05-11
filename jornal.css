@@ -1,4 +1,88 @@
 
+.menu-button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    background-color: white;
+    width: 200px;
+    padding: 10px;
+    position: absolute; /* Posiciona o menu em relação ao header */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o menu no meio do header */
+}
+
+.menu:target {
+    display: block; /* Mostra o menu quando o ID #menu é alvo */
+}
+
+.menu ul {
+    list-style: none;
+    padding-left: 0; /* Remove qualquer padding padrão */
+    display: flex; /* Usa Flexbox para os itens da lista */
+    flex-direction: column; /* Itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.menu li {
+    margin: 10px 0;
+    width: 100%; /* Faz o item ocupar toda a largura disponível */
+    text-align: center; /* Centraliza o texto dentro do <li> */
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    display: block; /* Garante que o link ocupe toda a largura do <li> */
+}
+
+.menu a:hover {
+    color: #ddd;
+}
+
+.close-menu {
+    display: block;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+    .menu {
+        display: block;
+        position: static;
+        background: none;
+        width: auto;
+        transform: none; /* Remove a transformação em telas grandes */
+    }
+    .menu ul {
+        flex-direction: row; /* Itens em linha */
+        justify-content: center; /* Centraliza os itens em telas grandes */
+        gap: 20px;
+    }
+    .menu li {
+        margin: 0;
+        width: auto; /* Ajusta a largura para o conteúdo */
+    }
+    .close-menu {
+        display: none !important;
+    }
+}
+
 body {
     font-family: 'Segoe UI', 'Lucida Sans', Arial, sans-serif;
 	margin: auto;
@@ -51,53 +135,12 @@ header button {
 }
 
 
-article:nth-child(2) {
+article:nth-child(3) {
     display: flex;
     justify-content: space-between;
     padding: 50px;
     background-color: white; 
     color: black;
-}
-
-article:nth-child(2) > div {
-    flex: 1;
-    padding: 20px;
-}
-
-article:nth-child(2) h2 {
-    align-items: baseline;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ffcc00; /* Amarelo para o título */
-}
-
-article:nth-child(2) p {
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-article:nth-child(2) a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-article:nth-child(2) video {
-    width: 100%;
-    height: auto;
-    background-color: white; /* Simula o fundo branco do vídeo */
-}
-
-/* Seção "Collaborate on presentations" */
-article:nth-child(3) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px;
-    background-color: #ffe6e6; /* Rosa claro */
 }
 
 article:nth-child(3) > div {
@@ -106,17 +149,57 @@ article:nth-child(3) > div {
 }
 
 article:nth-child(3) h2 {
+    align-items: baseline;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Amarelo para o título */
+}
+
+article:nth-child(3) p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+article:nth-child(3) a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article:nth-child(3) video {
+    width: 100%;
+    height: auto;
+    background-color: white; /* Simula o fundo branco do vídeo */
+}
+
+/* Seção "Collaborate on presentations" */
+article:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    background-color: white;
+}
+
+article:nth-child(4) > div {
+    flex: 1;
+    padding: 20px;
+}
+
+article:nth-child(4) h2 {
     font-size: 33px;
     margin-bottom: 20px;
     color: #0061ff; /* Azul para o título */
 }
 
-article:nth-child(3) p {
+article:nth-child(4) p {
     font-size: 19px;
 }
 
-article:nth-child(3) video {
-    width: 750px;
+article:nth-child(4) video {
     height: auto;
 }
 
