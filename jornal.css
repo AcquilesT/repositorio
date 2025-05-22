@@ -1,3 +1,96 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    flex-direction: row; /* Organiza o botão e as caixas em coluna */
+    align-items: center; /* Centraliza tudo */
+    padding: 20px;
+}
+
+.carousel-slide:target {
+    display: flex;
+}
+
+/* Mostra o primeiro slide por padrão */
+.carousel-slide#slide1 {
+    display: flex;
+}
+
+/* Contêiner para o botão */
+.button-container {
+    margin-bottom: 20px; /* Espaço entre o botão e as caixas */
+    width: 200px; /* Mesma largura das caixas para alinhamento */
+    text-align: center;
+}
+
+/* Estiliza o botão "Mostrar Mais/Menos" */
+.toggle-button .hidden{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.toggle-button:hover {
+    opacity: 0.8;
+}
+
+/* Contêiner para as caixas */
+.carousel-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box {
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.carousel-slide#slide2:target .hidden {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  MENU  */
 
 .menu-button {
     background: none;
@@ -83,6 +176,9 @@ main {
     }
 }
 
+
+/*  CABEÇALHO  */
+
 body {
     font-family: 'Segoe UI', 'Lucida Sans', Arial, sans-serif;
 	margin: auto;
@@ -125,6 +221,7 @@ header div img {
 }
 
 header button {
+    cursor: pointer;
     padding: 8px 16px;
     background-color: #51260e;
     border-style: inset;
@@ -134,25 +231,31 @@ header button {
     font-size: 14px;
 }
 
+/*  NOTICIA PRINCIPAL  */
 
 article:nth-child(3) {
+    flex-direction: row-reverse;
     display: flex;
     justify-content: space-between;
-    padding: 50px;
-    background-color: white; 
-    color: black;
+    margin: 30px;
+    background-color: white;
+    border-bottom: 2px solid #51260e;
+    border-top: 2px solid #51260e;
+    border-right: 2px solid #51260e;
 }
+
 
 article:nth-child(3) > div {
     flex: 1;
     padding: 20px;
+    border-left: 2px solid #51260e;
 }
 
 article:nth-child(3) h2 {
     align-items: baseline;
     font-size: 36px;
     margin-bottom: 20px;
-    color: #ffcc00; /* Amarelo para o título */
+    color: #51260e; 
 }
 
 article:nth-child(3) p {
@@ -169,13 +272,14 @@ article:nth-child(3) a {
     font-weight: bold;
 }
 
-article:nth-child(3) video {
+article:nth-child(3) img {
     width: 100%;
     height: auto;
-    background-color: white; /* Simula o fundo branco do vídeo */
+
 }
 
-/* Seção "Collaborate on presentations" */
+/*  ABA DE NOTICIAS RELEVANTES/RECENTES  */
+
 article:nth-child(4) {
     display: flex;
     justify-content: space-between;
@@ -192,7 +296,7 @@ article:nth-child(4) > div {
 article:nth-child(4) h2 {
     font-size: 33px;
     margin-bottom: 20px;
-    color: #0061ff; /* Azul para o título */
+    color: #0061ff; 
 }
 
 article:nth-child(4) p {
@@ -203,7 +307,8 @@ article:nth-child(4) video {
     height: auto;
 }
 
-/* Rodapé */
+/* RODAPÉ */
+
 footer {
     display: flex;
     justify-content: space-around;
