@@ -73,31 +73,26 @@
 	</article>
 
 	<article>
-
-		<div class="carousel">
-        <!-- Primeiro Conjunto (3 caixas visíveis por padrão) -->
-		 <div class="button-container">
-                <a href="#slide2" class="toggle-button">Mostrar Mais</a>
+            <div class="carousel">
+                <button class="nav-button prev" onclick="changeBoxes(-1)" aria-label="Trocar para caixas anteriores">❮</button>
+                <div class="box-container" id="boxContainer">
+                    <!-- Grupo 1 (Caixas 1, 2, 3) -->
+                    <div class="box-group group-1 active">
+                        <div class="box">Caixa 1: Informação A</div>
+                        <div class="box">Caixa 2: Informação B</div>
+                        <div class="box">Caixa 3: Informação C</div>
+                    </div>
+                    <!-- Grupo 2 (Caixas 4, 5, 6) -->
+                    <div class="box-group group-2">
+                        <div class="box">Caixa 4: Informação D</div>
+                        <div class="box">Caixa 5: Informação E</div>
+                        <div class="box">Caixa 6: Informação F</div>
+                    </div>
+                </div>
+                <button class="nav-button next" onclick="changeBoxes(1)" aria-label="Trocar para próximas caixas">❯</button>
             </div>
-        <div class="carousel-slide" id="slide1">
-            <div class="box">Caixa 1: Informação A</div>
-            <div class="box">Caixa 2: Informação B</div>
-            <div class="box">Caixa 3: Informação C</div>
-        </div>
-
-        <!-- Segundo Conjunto (mais 3 caixas visíveis) -->
-		 <div class="button-container">
-                <a href="#slide1" class="toggle-button">Mostrar Menos</a>
-            </div>
-        <div class="carousel-slide" id="slide2">
-            <div class="box hidden">Caixa 4: Informação D</div>
-            <div class="box hidden">Caixa 5: Informação E</div>
-            <div class="box hidden">Caixa 6: Informação F</div>
-        </div>
-    </div>
-
-	</article>
-
+			<script src="JavaScript.js" id="carouselScript"></script>
+        </article>
 	<footer>
 
 		<div>

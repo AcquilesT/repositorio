@@ -1,54 +1,31 @@
 .carousel {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 960px;
-    overflow: hidden;
-}
-
-.carousel-slide {
-    display: none;
-    flex-direction: row; /* Organiza o botão e as caixas em coluna */
-    align-items: center; /* Centraliza tudo */
+    margin: 0 auto;
     padding: 20px;
 }
 
-.carousel-slide:target {
-    display: flex;
+.box-container {
+    position: relative;
+    width: 680px; /* Ajustado para 3 caixas de 200px + gap de 20px */
+    height: 170px; /* Altura das caixas + padding */
 }
 
-/* Mostra o primeiro slide por padrão */
-.carousel-slide#slide1 {
-    display: flex;
-}
-
-/* Contêiner para o botão */
-.button-container {
-    margin-bottom: 20px; /* Espaço entre o botão e as caixas */
-    width: 200px; /* Mesma largura das caixas para alinhamento */
-    text-align: center;
-}
-
-/* Estiliza o botão "Mostrar Mais/Menos" */
-.toggle-button .hidden{
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.toggle-button:hover {
-    opacity: 0.8;
-}
-
-/* Contêiner para as caixas */
-.carousel-slide {
-    display: flex;
+.box-group {
+    display: none;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.box-group.active {
+    display: flex;
 }
 
 .box {
@@ -65,33 +42,44 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.hidden {
-    display: none;
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
 }
 
-.carousel-slide#slide2:target .hidden {
-    display: flex;
+.nav-button:hover {
+    opacity: 0.8;
 }
 
+.prev {
+    margin-right: 20px;
+}
 
+.next {
+    margin-left: 20px;
+}
 
+/* Responsividade */
+@media (max-width: 600px) {
+    .box-container {
+        width: 510px; /* Ajustado para caixas menores */
+    }
+    .box {
+        width: 150px;
+        height: 120px;
+        font-size: 14px;
+    }
+    .box-group {
+        gap: 10px;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  MENU  */
-
+/* MENU */
 .menu-button {
     background: none;
     border: none;
@@ -107,35 +95,35 @@
     background-color: white;
     width: 200px;
     padding: 10px;
-    position: absolute; /* Posiciona o menu em relação ao header */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o menu no meio do header */
+    transform: translate(-50%, -50%);
 }
 
 .menu:target {
-    display: block; /* Mostra o menu quando o ID #menu é alvo */
+    display: block;
 }
 
 .menu ul {
     list-style: none;
-    padding-left: 0; /* Remove qualquer padding padrão */
-    display: flex; /* Usa Flexbox para os itens da lista */
-    flex-direction: column; /* Itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu li {
     margin: 10px 0;
-    width: 100%; /* Faz o item ocupar toda a largura disponível */
-    text-align: center; /* Centraliza o texto dentro do <li> */
+    width: 100%;
+    text-align: center;
 }
 
 .menu a {
     color: black;
     text-decoration: none;
     font-size: 16px;
-    display: block; /* Garante que o link ocupe toda a largura do <li> */
+    display: block;
 }
 
 .menu a:hover {
@@ -150,7 +138,6 @@ main {
     padding: 20px;
 }
 
-/* Responsividade */
 @media (min-width: 768px) {
     .menu-button {
         display: none;
@@ -160,28 +147,26 @@ main {
         position: static;
         background: none;
         width: auto;
-        transform: none; /* Remove a transformação em telas grandes */
+        transform: none;
     }
     .menu ul {
-        flex-direction: row; /* Itens em linha */
-        justify-content: center; /* Centraliza os itens em telas grandes */
+        flex-direction: row;
+        justify-content: center;
         gap: 20px;
     }
     .menu li {
         margin: 0;
-        width: auto; /* Ajusta a largura para o conteúdo */
+        width: auto;
     }
     .close-menu {
         display: none !important;
     }
 }
 
-
-/*  CABEÇALHO  */
-
+/* CABEÇALHO */
 body {
     font-family: 'Segoe UI', 'Lucida Sans', Arial, sans-serif;
-	margin: auto;
+    margin: auto;
 }
 
 header {
@@ -189,7 +174,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #51260e ; 
+    background-color: #51260e;
     color: white;
 }
 
@@ -217,7 +202,7 @@ header div {
 }
 
 header div img {
- width: 60px;
+    width: 60px;
 }
 
 header button {
@@ -231,8 +216,7 @@ header button {
     font-size: 14px;
 }
 
-/*  NOTICIA PRINCIPAL  */
-
+/* NOTÍCIA PRINCIPAL */
 article:nth-child(3) {
     flex-direction: row-reverse;
     display: flex;
@@ -244,7 +228,6 @@ article:nth-child(3) {
     border-right: 2px solid #51260e;
 }
 
-
 article:nth-child(3) > div {
     flex: 1;
     padding: 20px;
@@ -255,7 +238,7 @@ article:nth-child(3) h2 {
     align-items: baseline;
     font-size: 36px;
     margin-bottom: 20px;
-    color: #51260e; 
+    color: #51260e;
 }
 
 article:nth-child(3) p {
@@ -275,28 +258,26 @@ article:nth-child(3) a {
 article:nth-child(3) img {
     width: 100%;
     height: auto;
-
 }
 
-/*  ABA DE NOTICIAS RELEVANTES/RECENTES  */
-
+/* ABA DE NOTÍCIAS RELEVANTES/RECENTES */
 article:nth-child(4) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px;
+    padding: 20px;
     background-color: white;
 }
 
 article:nth-child(4) > div {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
 
 article:nth-child(4) h2 {
     font-size: 33px;
     margin-bottom: 20px;
-    color: #0061ff; 
+    color: #0061ff;
 }
 
 article:nth-child(4) p {
@@ -308,7 +289,6 @@ article:nth-child(4) video {
 }
 
 /* RODAPÉ */
-
 footer {
     display: flex;
     justify-content: space-around;
