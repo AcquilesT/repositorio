@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 960px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -39,11 +39,24 @@
     text-align: center;
     padding: 10px;
     font-size: 16px;
+    flex-direction: column;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.noticia {
+    display: flex;
+    justify-content: center;
+
+}
+
+.box img{
+    width: 100px;
+    height: 100px;
 }
 
 .nav-button {
-    background-color: #007bff;
+    background-color: #51260e;
     color: white;
     border: none;
     padding: 10px;
