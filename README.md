@@ -3,6 +3,7 @@ repositorio para o projeto da disciplina de desenvolvimento de produtos multimed
 
 # Projeto
 O site de um jornal, com um login, algumas noticias e aba de "about us", ilustração na img ideia.png.
+<img src="Jornal.png">
 
 ## Autores
 Acquiles Torres
